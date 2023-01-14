@@ -238,7 +238,12 @@ export default function ConnectionStatus() {
   const dispatch = useAppDispatch();
 
   function handleClick() {
-    dispatch(SetProfileActivateOnly());
+    if(NavControllerProfileActivated){
+      dispatch(SetProfileActivated(false));
+    }
+    else{
+      dispatch(SetProfileActivateOnly());
+    }
   }
 
   return (
@@ -249,7 +254,7 @@ export default function ConnectionStatus() {
           height={35}
         />
         <UserNameDiv>왕십리꿀벅지</UserNameDiv>
-        <EditButton onClick={handleClick} className='profile-edit-button'>
+        <EditButton onClick={handleClick} className='profile-edit-button' pressed = {NavControllerProfileActivated}>
           <EditIcon sx={{ fontSize: 30 }}></EditIcon>
         </EditButton>
         {NavControllerProfileActivated ? <ProfileEditModal /> : null}
@@ -274,12 +279,13 @@ const StyledRedBox = styled.div`
   padding: 4x;
 `;
 
-const EditButton = styled.button`
-  background-color: #CAB8FF;
+const EditButton = styled.button<{ pressed: boolean }>`
+  background-color: #cab8ff;
   border: none;
-  &:hover{  
-    background-color : #D2CBFF;
-    color : red;
+  color: ${(props) => (props.pressed ? 'red' : 'black')};
+  &:hover {
+    background-color: #d2cbff;
+    color: red;
   }
 `;
 

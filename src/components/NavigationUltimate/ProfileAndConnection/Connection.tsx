@@ -14,16 +14,34 @@ import Game from 'src/scenes/Game';
 import phaserGame from 'src/PhaserGame';
 import Bootstrap from 'src/scenes/Bootstrap';
 // styled.div with Shadow
-const StyledRedBox = styled.button`
+const StyledAudioBox = styled.button<{pressed:boolean}>`
   display: flex;
   justify-content: center;
   width: 60px;
   height: 44px;
-  background-color: #CAB8FF;
-  box-shadow: 0 0 10px 0 #000000;
+  color: ${ (props) => (props.pressed ? "#62D3A3": "#DD0000")};
+  background-color: ${ (props) => (props.pressed ? "#D2CBFF": "#CAB8FF")};
+  box-shadow: ${(props) => (props.pressed ?  "0" : " 3px 3px 3px 3px gray" )};
   font-size: 2rem;
   font-weight: 900;
-  border: none;
+  border: ${ (props) => (props.pressed ? "solid gray": "none")};
+  &:hover{  
+    background-color : #D2CBFF;
+    color : #DD0000;
+  }
+`;
+
+const StyledVideoBox = styled.button<{pressed:boolean}>`
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 44px;
+  color: ${ (props) => (props.pressed ? "#62D3A3": "#DD0000")};
+  background-color: ${ (props) => (props.pressed ? "#D2CBFF": "#CAB8FF")};
+  box-shadow: ${(props) => (props.pressed ?  "0" : " 3px 3px 3px 3px gray" )};
+  font-size: 2rem;
+  font-weight: 900;
+  border: ${ (props) => (props.pressed ? "solid gray": "none")};
   &:hover{  
     background-color : #D2CBFF;
     color : #DD0000;
@@ -45,12 +63,12 @@ const bootstrap = phaserGame.scene.keys.bootstrap as Bootstrap;
 
   return (
     <Wrapper>
-      <StyledRedBox onClick={() => bootstrap.network.webRTC?.toggleAudio()} >
+      <StyledAudioBox onClick={() => bootstrap.network.webRTC?.toggleAudio()} pressed = {audioStatus}>
           {audioStatus ? <MicIcon fontSize="large" /> : <MicOffIcon fontSize="large" sx={{ color: "#DD0000" }}/>}
-      </StyledRedBox>
-      <StyledRedBox onClick={() => bootstrap.network.webRTC?.toggleVideo()}>
+      </StyledAudioBox>
+      <StyledVideoBox onClick={() => bootstrap.network.webRTC?.toggleVideo()} pressed = {videoStatus}>
         {videoStatus ? <VideocamIcon fontSize="large" /> : <VideocamOffIcon fontSize="large" sx={{ color: "#DD0000" }}/>}
-      </StyledRedBox>
+      </StyledVideoBox>
     </Wrapper>
   );
 }

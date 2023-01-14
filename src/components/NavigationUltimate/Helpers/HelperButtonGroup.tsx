@@ -12,6 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import { BackgroundMode } from '../../../types/BackgroundMode';
 import { ENTERING_PROCESS, toggleBackgroundMode } from '../../../stores/UserStore';
@@ -83,6 +84,25 @@ const RoomName = styled.div`
     color: #eee;
   }
 `;
+
+const StyledRedBox = styled.button`
+  display: flex;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #CAB8FF;
+  font-size: 1rem;
+  font-weight: 900;
+  border: none;
+  margine-right: 10px;
+  box-shadow: 3px 3px 3px 3px gray;
+
+  &:hover{  
+    background-color : #D2CBFF;
+    color : #EE0000;
+  }
+`;
+
 
 const RoomDescription = styled.div`
   margin: 0 20px;
@@ -208,7 +228,7 @@ export default function HelperButtonGroup() {
             {backgroundMode === BackgroundMode.DAY ? <DarkModeIcon /> : <LightModeIcon />}
           </StyledFab>
         </Tooltip>
-        <button
+        <StyledRedBox
           onClick={() => {
             const cookies = new Cookies();
             cookies.remove('refreshToken', { path: '/' });
@@ -218,8 +238,8 @@ export default function HelperButtonGroup() {
             window.location.href = '/';
           }}
         >
-          로그아웃
-        </button>
+          <LogoutIcon fontSize="large" />
+        </StyledRedBox>
       </ButtonGroup>
     </Backdrop>
   );

@@ -15,15 +15,20 @@ import {
 } from '../../../../../stores/NavbarStore';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
-const StyledRedBox = styled.div`
+const StyledRedBox = styled.button<{pressed:boolean}>`
   display: flex;
   justify-content: center;
   width: 60px;
   height: 44px;
-  background-color: #CAB8FF;
-  box-shadow: 0 0 10px 0 #000000;
+  background-color: ${ (props) => (props.pressed ? "#D2CBFF": "#CAB8FF")};
+  box-shadow: ${(props) => (props.pressed ?  "0" : " 3px 3px 3px 3px gray" )};
   font-size: 1rem;
   font-weight: 900;
+  border: ${ (props) => (props.pressed ? "solid gray": "none")};
+  &:hover{  
+    background-color : #D2CBFF;
+    color : #6EBEFE;
+  }
 `;
 const Wrapper = styled.div`
   position: relative;
@@ -151,7 +156,7 @@ export default function DMboxButton() {
 
   return (
     <Wrapper>
-      <StyledRedBox onClick={handleClick}>
+      <StyledRedBox onClick={handleClick} pressed = {NavControllerChattingListActivated}> 
         <VolunteerActivismIcon fontSize="large" />
       </StyledRedBox>
       {NavControllerChattingListActivated && (
