@@ -125,14 +125,23 @@ export default class Game extends Phaser.Scene {
       floorTilesImage,
       modernExteriorsImage,
       fencesImage,
-      waterToyImage,
       tileImage,
-      waterBridgeImage,
     ]);
     const fencesLayer = this.map.createLayer('fences', interiorImage);
 
     const buildingsLayer = this.map.createLayer('buildings', [
       boat1Image,
+      billboardImage,
+      camping3Image,
+    ]);
+
+    const secondGroundLayer = this.map.createLayer('secondGround', [interiorImage, villasImage]);
+
+    const foregroundLayer = this.map.createLayer('foreground', [
+      modernExteriorsImage,
+      tileImage,
+      interiorImage,
+      villasImage,
       billboardImage,
       camping3Image,
     ]);
@@ -177,6 +186,7 @@ export default class Game extends Phaser.Scene {
     // SwingLayer.setCollisionByProperty({ collisions: true });
     // cafeLayer.setCollisionByProperty({ collisions: true });
     // cafe_fenceLayer.setCollisionByProperty({ collisions: true });
+
     const cookies = new Cookies();
     const userId = store.getState().user?.userId || cookies.get('userId') || this.network.userId;
     this.myPlayer = this.add.myPlayer(
@@ -199,7 +209,7 @@ export default class Game extends Phaser.Scene {
     // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], BuildingLayer);
     // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], SwingLayer);
     // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], cafeLayer);
-    this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], fencesLayer);
+    // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], fencesLayer);
 
     // this.physics.add.overlap(
     //   this.playerSelector,
