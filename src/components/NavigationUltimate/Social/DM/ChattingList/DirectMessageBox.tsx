@@ -14,22 +14,25 @@ import {
   SetChattingListActivateOnly,
 } from '../../../../../stores/NavbarStore';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import Colors from 'src/utils/Colors';
 
-const StyledRedBox = styled.button<{pressed:boolean}>`
+const StyledRedBox = styled.button`
   display: flex;
   justify-content: center;
-  width: 60px;
+  align-items: center;
+  width: 44px;
   height: 44px;
-  background-color: ${ (props) => (props.pressed ? "#D2CBFF": "#CAB8FF")};
-  box-shadow: ${(props) => (props.pressed ?  "0" : " 3px 3px 3px 3px gray" )};
+  border: none;
+  border-radius: 30%;
+  background-color: ${Colors.indigo};
   font-size: 1rem;
   font-weight: 900;
-  border: ${ (props) => (props.pressed ? "solid gray": "none")};
-  &:hover{  
-    background-color : #D2CBFF;
-    color : #6EBEFE;
+
+  &:hover {
+    background-color: ${Colors.violet};
   }
 `;
+
 const Wrapper = styled.div`
   position: relative;
   top: 0;
@@ -45,9 +48,6 @@ const DMwrapper = styled.div`
   height: 580px;
   width: 370px;
   border-radius: 25px;
-  box-shadow: 20px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 `;
 const DM = styled.div`
   padding: 15px 35px 15px 15px;
@@ -156,8 +156,8 @@ export default function DMboxButton() {
 
   return (
     <Wrapper>
-      <StyledRedBox onClick={handleClick} pressed = {NavControllerChattingListActivated}> 
-        <VolunteerActivismIcon fontSize="large" />
+      <StyledRedBox onClick={handleClick}>
+        <VolunteerActivismIcon fontSize="large" sx={{ color: '#fff' }} />
       </StyledRedBox>
       {NavControllerChattingListActivated && (
         <div className="'DMpopup">

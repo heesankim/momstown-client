@@ -76,7 +76,7 @@
          "name":"ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":90,
          "x":0,
          "y":0
@@ -147,7 +147,7 @@
          "name":"buildings",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":90,
          "x":0,
          "y":0
@@ -516,6 +516,196 @@
          "spacing":0,
          "tilecount":9035,
          "tileheight":16,
+         "tiles":[
+                {
+                 "id":6950,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":6951,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":6952,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":6953,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":6954,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7089,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7090,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7091,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7092,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7093,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7228,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7229,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7230,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7231,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7232,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7367,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7368,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7506,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7507,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7508,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7509,
+                 "properties":[
+                        {
+                         "name":"collisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
          "tilewidth":16
         }, 
         {

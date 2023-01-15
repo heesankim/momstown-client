@@ -20,6 +20,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { MessageType, setFocused, setShowChat, chatSlice } from '../../../stores/ChatStore';
 import { roomSlice } from '../../../stores/RoomStore';
 import { SetPublicChatActivated, SetPublicChatActivateOnly } from '../../../stores/NavbarStore';
+import Colors from 'src/utils/Colors';
 
 const Backdrop = styled.div`
   position: fixed;
@@ -95,7 +96,6 @@ const MessageWrapper = styled.div`
   }
 `;
 const InputWrapper = styled.form`
-  box-shadow: 10px 10px 10px #00000018;
   border: 1px solid #42eacb;
   border-radius: 0px 0px 10px 10px;
   display: flex;
@@ -113,21 +113,20 @@ const EmojiPickerWrapper = styled.div`
   bottom: 54px;
   right: 16px;
 `;
-const StyledRedBox = styled.button<{pressed:boolean}>`
+const StyledRedBox = styled.button`
   display: flex;
   justify-content: center;
-  width: 60px;
+  align-items: center;
+  width: 44px;
   height: 44px;
-  background-color: ${ (props) => (props.pressed ? "#D2CBFF": "#CAB8FF")};
+  border: none;
+  border-radius: 30%;
+  background-color: ${Colors.indigo};
   font-size: 1rem;
   font-weight: 900;
-  border: ${ (props) => (props.pressed ? "solid gray": "none")};
-  margine-right: 10px;
-  box-shadow: ${(props) => (props.pressed ?  "0" : " 3px 3px 3px 3px gray" )};
 
-  &:hover{  
-    background-color : #D2CBFF;
-    color : #6EBEFE;
+  &:hover {
+    background-color: ${Colors.violet};
   }
 `;
 
@@ -336,7 +335,7 @@ export default function PublicChat() {
           handleClick();
         }}
       >
-        <ChatIcon fontSize="large" />
+        <ChatIcon sx={{ color: '#fff' }} fontSize="large" />
       </StyledRedBox>
       {NavControllerPublicChatActivated ? <Chat /> : null}
     </div>
