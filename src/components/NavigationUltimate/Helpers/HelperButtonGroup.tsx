@@ -91,6 +91,7 @@ const RoomName = styled.div`
 const StyledRedBox = styled.button`
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   align-items: center;
   width: 44px;
   height: 44px;
@@ -106,6 +107,24 @@ const StyledRedBox = styled.button`
   }
 `;
 
+=======
+  width: 44px;
+  height: 44px;
+  background-color: #CAB8FF;
+  font-size: 1rem;
+  font-weight: 900;
+  border: none;
+  margine-right: 10px;
+  box-shadow: 3px 3px 3px 3px gray;
+
+  &:hover{  
+    background-color : #D2CBFF;
+    color : #EE0000;
+  }
+`;
+
+
+>>>>>>> 527b19ec36e9fbc0dc036447edac75dfb22b0782
 const RoomDescription = styled.div`
   margin: 0 20px;
   max-width: 460px;

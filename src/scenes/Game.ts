@@ -186,6 +186,7 @@ export default class Game extends Phaser.Scene {
     // SwingLayer.setCollisionByProperty({ collisions: true });
     // cafeLayer.setCollisionByProperty({ collisions: true });
     // cafe_fenceLayer.setCollisionByProperty({ collisions: true });
+    fencesLayer.setCollisionByProperty({ collisions: true });
 
     const cookies = new Cookies();
     const userId = store.getState().user?.userId || cookies.get('userId') || this.network.userId;

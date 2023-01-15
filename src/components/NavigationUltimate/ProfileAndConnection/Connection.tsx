@@ -16,6 +16,7 @@ import Bootstrap from 'src/scenes/Bootstrap';
 import Colors from 'src/utils/Colors';
 
 // styled.div with Shadow
+<<<<<<< HEAD
 const StyledAudioBox = styled.button`
   position: relative;
   display: flex;
@@ -35,6 +36,9 @@ const StyledAudioBox = styled.button`
 
 const StyledVideoBox = styled.button`
   position: relative;
+=======
+const StyledAudioBox = styled.button<{pressed:boolean}>`
+>>>>>>> 527b19ec36e9fbc0dc036447edac75dfb22b0782
   display: flex;
   justify-content: center;
   align-items: center;

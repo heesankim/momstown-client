@@ -326,6 +326,17 @@ export default function PublicChat() {
     }
   }
 
+  
+  function handleClick() {
+    if (NavControllerPublicChatActivated){
+      dispatch(SetPublicChatActivated(false));
+    }
+    else{
+      dispatch(SetPublicChatActivateOnly());
+    }
+  }
+
+
   return (
     <div>
       <StyledRedBox pressed={NavControllerPublicChatActivated}
